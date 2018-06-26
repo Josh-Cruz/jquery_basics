@@ -1,0 +1,39 @@
+.container{
+    width: 1000px;
+    height: auto;
+}
+
+.box {
+    border-bottom: 5px solid black;
+    text-align: center;
+}
+
+button{
+    margin: 20px;
+    box-shadow:3px 3px 3px  black;
+    display: inline-block;
+}
+
+p{
+    display: inline-block;
+    
+}
+.red{
+    background-color: red;
+}
+
+img{
+    height: 150px;
+    width:150px;
+    display: inline-block;
+};
+
+#par8{
+    display: block;
+}
+#par9{
+    display: block;
+}
+#par10{
+    display: block;
+}

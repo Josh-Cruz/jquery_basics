@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>basic jquery assignments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Add Class</h1>
+            <button id="addClass">Add class</button>
+            <p id="par1">CLick the button to add class red to this paragraph</p>
+        </div>
+        
+        <div class="box">
+            <h1>Hide/Show Toggle</h1>
+            <button id="hideOrShow">hide/show</button>
+            <p id="par2">CLick the button to hide or show this paragraph</p>
+        </div>
+        
+        <div class="box">
+            <h1>Hide/Show</h1>
+            <button id="hide">hide stuff</button>
+            <button id="show">show stuff</button>
+            <p id="par3">CLick the button to hide or show the image</p>
+            <img src="https://i.imgur.com/UpjkWMF.jpg" alt="" id="ds1">
+        </div>
+        
+        <div class="box">
+            <h1>sliding!</h1>
+            <button id="slide_up">slide_up</button>
+            <button id="slide_down">slide_down</button>
+            <button id="slide_toggle">slide_toggle</button>
+            <p id="par4">CLick the button to slide this photo</p>
+            <img src="https://i.imgur.com/UpjkWMF.jpg" alt="" id="ds2">
+        </div>
+        
+        <div class="box">
+            <h1>Fade in/out</h1>
+            <button id="Fade_in">Fade_in</button>
+            <button id="Fade_out">Fade_out</button>
+            <p id="par5">CLick the button to fade this paragraph</p>
+        </div>
+        
+        <div class="box">
+            <h1 id="title1">.before & .after</h1>
+            <button id="before">before</button>
+            <button id="after">After</button>
+            <p id="par6">CLick the button to move this paragraph</p>
+        </div>
+        
+        <div class="box">
+            <h1>.append &.html</h1>
+            <button id="append">append</button>
+            <button id="changeHtml">changeHtml</button>
+            <p id="par7">CLick the button to add class red to this paragraph</p>
+        </div>
+        
+        
+        <div class="box">
+            <h1>.val .attr & .text</h1>
+
+            <input type="text" value="username">
+            <button id="value">value</button>
+            <button id="attribute">attribute</button>
+            <button id="text">text</button>
+            <input id="check1" type="checkbox" checked="checked">
+            <label for="check1">Check me</label>
+            <p></p>
+            <p id="par8">this is my 1st par</p>
+            <p id="par9">this is my 2nd par</p>
+            <p id="par10">this is my 3rd par</p>
+        </div>
+        
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+             $("#addClass").click(function () { 
+                $("#par1").addClass("red");
+             });
+             $('#hideOrShow').click(function () { 
+                $("#par2").toggle();
+                 
+             });
+
+            $('#hide').click(function () { 
+                $('#par3, #ds1').hide();
+                
+            });
+            $('#show').click(function () { 
+                $('#par3, #ds1').show();
+                
+            });
+            
+            $('#slide_up').click(function () { 
+                $('#ds2').slideUp();
+            });
+         
+            
+            $('#slide_down').click(function () { 
+                $('#ds2').slideDown();
+            });
+         
+            
+            $('#slide_toggle').click(function () { 
+                $('#ds2').slideToggle();
+            });
+         
+            $('#Fade_in').click(function () { 
+                $('#par5').fadeIn();
+            });
+
+            $('#Fade_out').click(function () { 
+                $('#par5').fadeOut();
+            });
+
+
+            $('#before').click(function () { 
+                $('#par6').before('Im new here!--> ');
+            });
+
+            $('#after').click(function () { 
+                $('#par6').after(' <--Im at the end');
+        
+            });
+
+            $('#append').click(function () { 
+                $('#par7').append(' <strong> <--look at me--> </strong>');
+            });
+            $('#changeHtml').click(function () { 
+                $('#par7').html(' <--im different now--> ');
+            }); 
+            
+            $('#value').click(function () { 
+                $("input")
+                    .keyup(function () {
+                        var value = $(this).val();
+                        $("#par8").text(value);
+                    })
+                    .keyup();
+                
+            });
+            $('#attribute').click(function () { 
+                $("input").change(function () {
+                        var $input = $(this);
+                        $("#par9").html(".attr( 'checked' ): <b>" + $input.attr("checked") + "</b><br>" +
+                            ".prop( 'checked' ): <b>" + $input.prop("checked") + "</b><br>" +
+                            ".is( ':checked' ): <b>" + $input.is(":checked") + "</b>");
+                    })
+                    .change();
+            });
+
+            $('#text').click(function () { 
+                $("#par10").text("<strong>Some</strong> new text.");     
+            });
+
+
+
+        });
+      
+    
+    
+    
+    </script>
+</body>
+</html>
